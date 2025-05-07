@@ -1,0 +1,169 @@
+/* global.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Fira Code', monospace;
+    background: #0d0d0d url('../img/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #f0f0f0;
+    overflow: hidden;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 0;
+}
+
+nav {
+    width: 100%;
+    height: 80px; /* Fixe la hauteur à 80px */
+    background: rgba(10, 10, 10, 0.85);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center; /* S'assure que les éléments à l'intérieur sont centrés */
+    gap: 2rem;
+    padding: 0;
+    margin: 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-bottom: 1px solid #808080;
+    box-sizing: border-box;
+}
+
+nav a {
+    color: #00ff00;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #00cc00;
+}
+
+nav * {
+    box-sizing: border-box; /* Applique box-sizing à tous les éléments à l'intérieur de la nav */
+}
+
+
+
+
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 120px);
+    padding: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.glass-card {
+    background: rgba(30, 30, 30, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    backdrop-filter: blur(25px) saturate(180%);
+    -webkit-backdrop-filter: blur(25px) saturate(180%);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+    max-width: 900px;
+    width: 100%;
+    padding: 3rem;
+    color: #e0e0e0;
+    text-align: center;
+}
+
+h1, h2 {
+    color: #00ff00;
+    margin-bottom: 1.2rem;
+    font-size: 2.5rem;
+}
+
+p, li {
+    color: #d0d0d0;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li::before {
+    content: '> ';
+    color: #00ff00;
+}
+
+.cursor {
+    display: inline-block;
+    width: 10px;
+    height: 1em;
+    background-color: #00ff00;
+    animation: blink 1s steps(2, start) infinite;
+    vertical-align: middle;
+}
+
+@keyframes blink {
+    to {
+        visibility: hidden;
+    }
+}
+
+/* Ajouy CSS pour page PC */
+
+.pc-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+}
+
+.pc-table th, .pc-table td {
+    padding: 1rem;
+    text-align: left;
+    border: 1px solid #808080;
+}
+
+.pc-table th {
+    background-color: #333;
+    color: #00ff00;
+    font-weight: 600;
+}
+
+.pc-table td {
+    background-color: rgba(0, 0, 0, 0.3); /* Fond transparent pour les lignes de PC */
+    color: #d0d0d0;
+}
+
+.pc-table td a {
+    color: #00ff00; /* Lien en vert */
+    text-decoration: none;
+    font-weight: 600;
+    display: block; /* Rendre le lien cliquable sur toute la cellule */
+}
+
+.pc-table td a:hover {
+    color: #00cc00; /* Lien en vert clair au survol */
+}
+
+.pc-table tr:hover {
+    background-color: rgba(0, 255, 0, 0.1); /* Survol de la ligne */
+    cursor: pointer;
+}
