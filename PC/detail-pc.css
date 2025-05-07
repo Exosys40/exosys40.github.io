@@ -1,0 +1,33 @@
+html, body {
+	height: auto;
+	overflow: auto;
+}
+
+.specs-table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-bottom: 2rem;
+}
+
+.specs-table th, .specs-table td {
+	border: 1px solid #808080;
+	padding: 0.8rem;
+	text-align: left;
+}
+
+.gallery {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+	gap: 1rem;
+}
+
+.gallery img {
+	width: 100%;
+	border-radius: 10px;
+	cursor: pointer;
+	transition: transform 0.3s;
+}
+
+.gallery img:hover {
+	transform: scale(1.05);
+}
